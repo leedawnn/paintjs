@@ -2,8 +2,8 @@ const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 
-ctx.strokeStyle = "#2c2c2c";
-ctx.lineWidth = 2.5;
+ctx.strokeStyle = "#2c2c2c"; // 펜 색상 디폴트 값(검정)
+ctx.lineWidth = 2.5; // 펜 굵기 디폴트 값
 
 let painting = false;
 
@@ -28,7 +28,8 @@ function onMouseMove(event) { // 모든 움직임을 감지하고, 라인을 만
 }
 
 function handleColorClick(event) {
-    console.log(event.target.style); 
+    const color = event.target.style.backgroundColor;
+    ctx.strokeStyle = color; 
 }
 
 if(canvas) {
