@@ -2,11 +2,13 @@ const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
+const modeBtn = document.getElementById("jsMode");
 
 ctx.strokeStyle = "#2c2c2c"; // 펜 색상 디폴트 값(검정)
 ctx.lineWidth = 2.5; // 펜 굵기 디폴트 값
 
 let painting = false;
+let filling = false;
 
 function stopPainting() {
     painting = false;
@@ -38,6 +40,16 @@ function handleRangeChange(event) {
     ctx.lineWidth = size;
 }
 
+function handleModeClick() {
+    if(filling === true) {
+        filling = false;
+        modeBtn.innerText = "Fill";
+    } else {
+        filling = true;
+        modeBtn.innerText = "Paint";
+    }
+}
+
 if(canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
@@ -49,4 +61,8 @@ Array.from(colors).forEach(color => color.addEventListener("click", handleColorC
 
 if(range) {
     range.addEventListener("input", handleRangeChange);
+}
+
+if(modeBtn) {
+    modeBtn.addEventListener("click", handleModeClick);
 }
