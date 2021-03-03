@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0px;
+    margin-top: 23px;
 }
 
 .canvas {
@@ -17,15 +17,18 @@ body {
     box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
 }
 
-.canvas .jsClear {
-    width: 30px;
-    height: 33px;
-    display:block;
+.jsClear {
+    margin: 10px 0 0 490px;
+}
+
+a{
+    color: #495057;
+    opacity: 0.8;
+    display: inline;
     cursor: pointer;
 }
 
 .controls {
-    margin-top: 40px;
     display: flex;  
     flex-direction: column;
     align-items: center;

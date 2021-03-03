@@ -52,7 +52,7 @@ function handleModeClick() {
     }
 }
 
-function clearCanvasClick(event) {
+function clearCanvasClick() {
     if(!clear) {
         ctx.clearRect(0, 0, 540, 540);
     } else {

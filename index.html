@@ -10,10 +10,17 @@
 </head>
 <body>
     <canvas id="jsCanvas" class="canvas" width="540" height="540">
-        <a class="jsClear" href="#">
-            <i class="far fa-trash-alt" onclick="clearCanvasClick();"></i>
-        </a>
+        <!-- <div class="jsClear">
+            <a href="#" onclick="clearCanvasClick(); return false;">
+                <i class="far fa-trash-alt"></i>
+            </a>
+        </div> -->
     </canvas>
+    <div class="jsClear">
+        <a href="#" onclick="clearCanvasClick(); return false;">
+            <i class="far fa-trash-alt fa-2x"></i>
+        </a>
+    </div>
     <div class="controls">
         <div class="controls__range">
             <input type="range" id="jsRange" min="0.1" max="5.0" value="2.5" step="0.1"/>
