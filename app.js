@@ -5,7 +5,14 @@ const range = document.getElementById("jsRange");
 const modeBtn = document.getElementById("jsMode");
 const clearBtn = document.getElementsByClassName("jsClear"); 
 
-ctx.strokeStyle = "#2c2c2c"; // 펜 색상 디폴트 값(검정)
+const INITIAL_COLOR = "#2c2c2c";
+const CANVAS_SIZE = 540;
+
+canvas.width = CANVAS_SIZE;
+canvas.height = CANVAS_SIZE;
+
+ctx.strokeStyle = INITIAL_COLOR; // 펜 색상 디폴트 값(검정)
+ctx.fillStyle = INITIAL_COLOR;
 ctx.lineWidth = 2.5; // 펜 굵기 디폴트 값
 
 let painting = false;
@@ -35,6 +42,7 @@ function onMouseMove(event) { // 모든 움직임을 감지하고, 라인을 만
 function handleColorClick(event) {
     const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color; 
+    ctx.fillStyle = color;
 }
 
 function handleRangeChange(event) {
@@ -54,9 +62,15 @@ function handleModeClick() {
 
 function clearCanvasClick() {
     if(!clear) {
-        ctx.clearRect(0, 0, 540, 540);
+        ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
     } else {
         ctx.beginPath();
+    }
+}
+
+function handleCanvasClick() {
+    if(filling) {
+        ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
     }
 }
 
@@ -65,6 +79,7 @@ if(canvas) {
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
+    canvas.addEventListener("click", handleCanvasClick);
 }
 
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
