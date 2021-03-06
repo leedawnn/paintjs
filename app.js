@@ -11,8 +11,10 @@ const CANVAS_SIZE = 540;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
+ctx.fillStyle = "white"; // 채우기 모드에서 배경 색상 디폴트 값
+ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 ctx.strokeStyle = INITIAL_COLOR; // 펜 색상 디폴트 값(검정)
-ctx.fillStyle = INITIAL_COLOR;
+ctx.fillStyle = INITIAL_COLOR; 
 ctx.lineWidth = 2.5; // 펜 굵기 디폴트 값
 
 let painting = false;
