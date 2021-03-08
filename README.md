@@ -8,5 +8,6 @@ Painting Board made with VanillaJS
 - 2D Context
 - 2D Painting
 - Brush Size
+- Erasing drawn content
 - Image Saving
 
