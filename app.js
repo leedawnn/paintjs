@@ -81,9 +81,12 @@ function handleContextMenu(event) {
     event.preventDefault();
 }
 
-function handleSaveClick(event) {
-    const image = canvas.toDataURL("image/jpeg");
-    console.log(image);
+function handleSaveClick() {
+    const image = canvas.toDataURL();
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "paintJS[🎨]";
+    link.click();
 }
 
 if(canvas) {
@@ -105,11 +108,10 @@ if(modeBtn) {
     modeBtn.addEventListener("click", handleModeClick);
 }
 
-if(clearBtn) {
-    clearBtn.addEventListener("click", clearCanvasClick);
-}
-
-
 if(saveBtn) {
     saveBtn.addEventListener("click", handleSaveClick);
+}
+
+if(clearBtn) {
+    clearBtn.addEventListener("click", clearCanvasClick);
 }
