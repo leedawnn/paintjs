@@ -12,4 +12,4 @@ Painting Board made with VanillaJS
 - Erasing drawn content
 - Image Saving
 
-[Try me out!]https://leedawnn.github.io/paintjs/
+[Try me out!](https://leedawnn.github.io/paintjs/)
